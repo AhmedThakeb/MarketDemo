@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Sales List</title>
+    </head>
+    <body>
+<table border="1">
+        <thead>
+    <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Creation Date</td>
+            <td>Last Mod Date</td>
+    </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewData["Saleo"] as IEnumerable<MarketDemo.Entities.Sales>)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.CreationDate</td>
+                    <td>@item.LastModifiedDate</td>
+                </tr>
+                
+            }
+        </tbody>
+</table>
+    </body>
+    </html>

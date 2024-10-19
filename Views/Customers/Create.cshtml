@@ -1,0 +1,27 @@
+﻿@model MarketDemo.Models.CustomersVM
+@{
+    Layout = null;
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create Customer</title>
+</head>
+<body>
+    <form asp-controller="Customers" asp-action="index" method="post">
+       <fieldset> 
+           <legend>
+               
+            Customer Create
+        </legend>
+
+        <label for="CustomerName">Customer Name</label>
+        <input type="text" id="CustomerName" name="Name" requierd="requierd" autofocus="autofocus" autocomplete="off"/>
+        <br />
+        <input type="submit" value="Save" />
+        </fieldset>
+    </form>
+</body>
+</html>

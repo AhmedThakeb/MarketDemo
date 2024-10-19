@@ -1,0 +1,27 @@
+﻿
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Market Customers</title>
+    </head>
+    <body>
+        <a href="create">Add a Customer</a>
+        <table border="1">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Creation Date</td>
+                <td>Last Mod Date</td>
+            </tr>
+       </thead>
+    <tbody>
+          @foreach (var item in ViewData["Custo"] as IEnumerable<MarketDemo.Entities.Customers>)
+            {
+                <tr><td>@item.Id</td><td>@item.Name</td><td>@item.CreationDate</td<td>@item.LastModifiedDate</td>></tr>
+            }
+    </tbody>
+</table>
+    
+    </body>
+    </html>
