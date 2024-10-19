@@ -15,10 +15,10 @@ namespace MarketDemo.Context
         public DbSet<Orders> Order { get; set; }
         public DbSet<Sales> Sale { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("server=DESKTOP-47RDCTV;database=Market;integrated security=true");
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("server=DESKTOP-47RDCTV;database=Market;integrated security=true");
+        }
 
     }
 }
