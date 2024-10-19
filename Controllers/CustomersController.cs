@@ -7,9 +7,12 @@ namespace MarketDemo.Controllers
 {
     public class CustomersController : Controller
     {
-        CustomerRep rep=new CustomerRep();
+        private readonly CustomerRep rep;
 
-      
+        public CustomersController(CustomerRep rep)
+        {
+            this.rep = rep;
+        }
         public IActionResult Index()
         {
            
