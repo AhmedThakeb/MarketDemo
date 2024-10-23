@@ -13,12 +13,13 @@
                 <td>Name</td>
                 <td>Creation Date</td>
                 <td>Last Mod Date</td>
+                <td>Edit</td>
             </tr>
        </thead>
     <tbody>
           @foreach (var item in ViewData["Custo"] as IEnumerable<MarketDemo.Entities.Customers>)
             {
-                <tr><td>@item.Id</td><td>@item.Name</td><td>@item.CreationDate</td<td>@item.LastModifiedDate</td>></tr>
+                <tr><td>@item.Id</td><td>@item.Name</td><td>@item.CreationDate</td><td>@item.LastModifiedDate</td><td><a href="/customers/edit/@item.Id" >Edit</a></td> </tr>
             }
     </tbody>
 </table>

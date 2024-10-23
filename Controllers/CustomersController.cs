@@ -34,5 +34,12 @@ namespace MarketDemo.Controllers
             return Redirect("/customers/index");
 
         }
-    }
+        [HttpGet]
+		public IActionResult Edit(int id)
+		{
+           var data = rep.GetById(id);
+            return View(data);
+
+		}
+	}
 }
