@@ -7,14 +7,14 @@ namespace MarketDemo.Entities
     {
         internal string Name;
 
-        public  int SalesId { get; set; }
-        [ForeignKey("SalesId")]
+        public  int SaleId { get; set; }
+        [ForeignKey("SaleId")]
         public Sales Sales { get; set; }
-        public int CustomesId { get; set;}
-        [ForeignKey("CustomesId")]
+        public int CustomeId { get; set;}
+        [ForeignKey("CustomeId")]
         public Customers Customers { get; set; }
-        public int ItemsId { get;set;}
-        [ForeignKey("ItemsId")]
+        public int ItemId { get;set;}
+        [ForeignKey("ItemId")]
         public Items Items { get; set; }
     }
 }

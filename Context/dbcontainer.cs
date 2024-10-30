@@ -6,19 +6,22 @@ namespace MarketDemo.Context
 {
     public class dbcontainer: DbContext
     {
-
-        internal object Invoices;
-
-        public DbSet<Customers> Customer { get; set; }
-        public DbSet<Invoices> Invoice { get; set; }
-        public DbSet<Items> Item { get; set; }
-        public DbSet<Orders> Order { get; set; }
-        public DbSet<Sales> Sale { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public dbcontainer(DbContextOptions<dbcontainer> options):base(options)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-47RDCTV;database=Market;integrated security=true");
+            
         }
+        
+
+        public DbSet<Customers> Customers { get; set; }
+        public DbSet<Invoices> Invoices { get; set; }
+        public DbSet<Items> Items { get; set; }
+        public DbSet<Orders> Orders { get; set; }
+        public DbSet<Sales> Sales { get; set; }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("server=DESKTOP-47RDCTV;database=Market;integrated security=true");
+        //}
 
     }
 }

@@ -9,8 +9,8 @@ namespace MarketDemo.Entities
         [Required]
         [StringLength(15)]
         public string Name { get; set; }
-        public int OrdersId { get; set; }
-        [ForeignKey("OrdersId")]
-        public Orders Orders { get; set; }
+        public int OrderId { get; set; }
+        [ForeignKey("OrderId")]
+        public Orders Order { get; set; }
     }
 }

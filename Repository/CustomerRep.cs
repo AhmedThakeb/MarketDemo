@@ -6,26 +6,31 @@ namespace MarketDemo.Repository
 {
     public class CustomerRep : ICustomerRep
     {
-        dbcontainer db = new dbcontainer();
+		private readonly dbcontainer db;
+
+		public CustomerRep(dbcontainer db)
+        {
+			this.db = db;
+		}
         public Customers AddObj(Customers Obj)
         {
-           var data = db.Customer.Add(Obj);
+           var data = db.Customers.Add(Obj);
             db.SaveChanges();
             return Obj;
         }
 
         public Customers DeleteObj(int id)
         {
-           var OldObj = db.Customer.Find(id);
-            db.Customer.Remove(OldObj);
+           var OldObj = db.Customers.Find(id);
+            db.Customers.Remove(OldObj);
             db.SaveChanges();
             return OldObj;
 
         }
 
         public Customers EditObj(Customers Obj)
-        {
-            var OldObj = db.Customer.Find(Obj);
+        { 
+            var OldObj = db.Customers.Find(Obj);
             OldObj.Name = Obj.Name;
             db.SaveChanges();
             return Obj;
@@ -34,13 +39,13 @@ namespace MarketDemo.Repository
 
         public IEnumerable<Customers> GetAll()
         {
-            var data = db.Customer.Select(C => C);
+            var data = db.Customers.Select(C => C);
             return data;
         }
 
         public Customers GetById(int id)
         {
-           var data = db.Customer.Find(id);
+           var data = db.Customers.Find(id);
             return data;
         }
     }

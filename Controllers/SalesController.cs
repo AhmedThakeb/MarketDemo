@@ -6,9 +6,15 @@ namespace MarketDemo.Controllers
 {
     public class SalesController : Controller
     {
+		private readonly SaleRep rep;
+
+		public SalesController(SaleRep rep)
+        {
+			this.rep = rep;
+		}
         public IActionResult Index()
         {
-            SaleRep rep = new SaleRep();
+            
             ViewData["Saleo"] = rep.GetAll();
             return View();
         }
