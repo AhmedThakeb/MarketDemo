@@ -1,4 +1,5 @@
 ﻿using MarketDemo.Context;
+using MarketDemo.Contracts;
 using MarketDemo.Entities;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 

@@ -1,6 +1,6 @@
 ﻿using MarketDemo.Entities;
 
-namespace MarketDemo.Repository
+namespace MarketDemo.Contracts
 {
     public interface ICustomerRep
     {
