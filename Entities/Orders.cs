@@ -5,16 +5,17 @@ namespace MarketDemo.Entities
 {
     public class Orders:CommonDate<int>
     {
-        internal string Name;
-
+        internal string Name { get; set; }
+        public int Qty { get; set; }
+        public decimal TotalItemPrice { get; set; }
+        [ForeignKey("Sales")]
         public  int SaleId { get; set; }
-        [ForeignKey("SaleId")]
         public Sales Sales { get; set; }
+        [ForeignKey("Customers")]
         public int CustomeId { get; set;}
-        [ForeignKey("CustomeId")]
         public Customers Customers { get; set; }
+        [ForeignKey("Items")]
         public int ItemId { get;set;}
-        [ForeignKey("ItemId")]
         public Items Items { get; set; }
     }
 }
